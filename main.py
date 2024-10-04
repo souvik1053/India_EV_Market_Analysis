@@ -2,9 +2,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import requests
 from streamlit_lottie import st_lottie
 import altair as alt
 import geopandas as gpd
+from PIL import Image
+import base64
+from random import randrange
 
 # Page configuration
 st.set_page_config(
@@ -31,27 +35,12 @@ minidf.columns = ['Year', 'Total Sales']
 
 ### Converting columns type 
 df1['Date'] = df1['Date'].astype(str)
-# Step 2: Replace invalid entries with NaT or a placeholder date
-df1['Date'] = df1['Date'].replace('0', pd.NaT)  # Replace '0' with NaT
-# Step 3: Convert to datetime, specifying the format
+df1['Date'] = df1['Date'].replace('0', pd.NaT) 
 df1['Date'] = pd.to_datetime(df1['Date'], format='%m/%d/%y', errors='coerce')
 
-col1, col2 = st.columns((2))
-# Getting the min and max date 
-startDate = pd.to_datetime(df1["Date"]).min()
-endDate = pd.to_datetime(df1["Date"]).max()
-
-# Making StartDate and end date columns
-with col1:
-    date1 = pd.to_datetime(st.date_input("Start Date", startDate))
-
-with col2:
-    date2 = pd.to_datetime(st.date_input("End Date", endDate))
-
-df1= df1[(df1['Date'] >= date1) & (df1['Date'] <= date2)].copy()
-
+# Setting Page Logo
 st.sidebar.image("CarbonCoders.png")
-#st.markdown('<style>div.block-container{padding-top:2rem;}</style>',unsafe_allow_html=True)
+#Creating Side Bar
 st.sidebar.header("Choose your filter: ")
 # Create for State
 State = st.sidebar.multiselect("Pick your State", df4["State"].unique())
@@ -61,6 +50,8 @@ else:
     df44=df3[df3['State'].isin(State)]
 # Create for Year 
 Year = st.sidebar.multiselect("Pick your Year", minidf["Year"].unique())
+
+# Creating Filter Logic
 if not Year:
     minidf1=minidf.copy()  
 else:
@@ -78,7 +69,8 @@ else:
 
 fd1=filter_data['State'].value_counts().reset_index()
 fd1.columns = ['State', 'Number of company'] 
-    
+# Some Vizualisation 
+col1, col2 = st.columns((2))    
 with col1:
     st.subheader("Total Ev Sales By Year")
     fig = px.bar(filter_Year, x = 'Year', y = 'Total Sales', 
@@ -103,7 +95,7 @@ with col2:
          csv = fd1.to_csv(index = False).encode('utf-8')
          st.download_button("Download Data", data = csv, file_name = "state.csv", mime = "text/csv",
                         help = 'Click here to download the data as a CSV file') 
-         
+# Some visualization         
 df['Growth Rate (%)'] = ((df['2024'] - df['2015']) / df['2015']).replace([float('inf'), -float('inf')], 0) * 100
 top_manufacturers_growth = df[['Maker', 'Growth Rate (%)']].sort_values(by='Growth Rate (%)', ascending=False).head(10)          
 category_sales = df.groupby('Cat').sum()[['2015', '2016', '2017', '2018', '2019', '2020', '2021','2022', '2023', '2024']].reset_index()
@@ -176,7 +168,21 @@ with cl6:
     with st.expander("Download Line Plot Data"):
         st.write(minidf_OLA.style.background_gradient(cmap="Oranges"))
         csv2 = minidf_OLA.to_csv(index = False).encode('utf-8')
-        st.download_button("Download Data", data=csv2, file_name="Category2.csv", mime="text/csv", key="unique_key_6")      
+        st.download_button("Download Data", data=csv2, file_name="Category2.csv", mime="text/csv", key="unique_key_6")
+        
+coll1, coll2 = st.columns((2))
+# Getting the min and max date 
+startDate = pd.to_datetime(df1["Date"]).min()
+endDate = pd.to_datetime(df1["Date"]).max()
+
+# Making StartDate and end date columns
+with coll1:
+    date1 = pd.to_datetime(st.date_input("Start Date", startDate))
+
+with coll2:
+    date2 = pd.to_datetime(st.date_input("End Date", endDate))
+
+df1= df1[(df1['Date'] >= date1) & (df1['Date'] <= date2)].copy()      
 # Heat Map
 df_melted = df1.melt(id_vars=["Date"], var_name="Vehicle Type", value_name="Count")
 
@@ -250,8 +256,105 @@ with cl7:
         st.write(df3.style.background_gradient(cmap="Oranges"))
         csv2 = minidf_OLA.to_csv(index = False).encode('utf-8')
         st.download_button("Download Data", data=csv2, file_name="Category2.csv", mime="text/csv", key="unique_key_11")
-        
+# Car pecker  
 
+st.subheader('Choose Best EV Car for You')  
+# Sidebar menu for customizing the car
+st.sidebar.header('Customize your Family EV car')
+
+list_car_body_type = ['SEDAN', 'SUV']
+list_car_color = ['RED', 'BLUE', 'BLACK', 'WHITE', 'GREEN', 'YELLOW', 'SILVER']
+list_wheel_type = ['ALLOY', 'STEEL', 'SPORT', 'CHROME']
+#list_window_tint = ['NO_TINT', 'LIGHT_TINT', 'MEDIUM_TINT', 'DARK_TINT']
+list_roof_type = ['DEFAULT', 'SUNROOF']
+
+# Random selection or default selection
+if st.button('Random Car '):
+    index_car_body_type = randrange(0, len(list_car_body_type))
+    index_car_color = randrange(0, len(list_car_color))
+    index_wheel_type = randrange(0, len(list_wheel_type))
+    #index_window_tint = randrange(0, len(list_window_tint))
+    index_roof_type = randrange(0, len(list_roof_type))
+else:
+    index_car_body_type = 0
+    index_car_color = 0
+    index_wheel_type = 0
+
+    index_roof_type = 0
+
+# User-selected options
+option_car_body_type = st.sidebar.selectbox('Car Body Type', list_car_body_type, index=index_car_body_type)
+option_car_color = st.sidebar.selectbox('Car Color', list_car_color, index=index_car_color)
+option_wheel_type = st.sidebar.selectbox('Wheel Type', list_wheel_type, index=index_wheel_type)
+option_roof_type = st.sidebar.selectbox('Roof Type', list_roof_type, index=index_roof_type)
+
+# Function to generate car image 
+def create_car_image(body_type, color, wheels,roof):
+    base_image_path = f'assets/{body_type.lower()}_{color.lower()}.png'  
+    car_image = Image.open(base_image_path)
+    return car_image
+
+car_image = create_car_image(option_car_body_type, option_car_color, option_wheel_type, option_roof_type)
+
+st.subheader('**Best Option for You**')
+st.image(car_image)
+
+# Custom function for encoding and downloading car image
+def imagedownload(filename):
+    image_file = open(filename, 'rb')
+    b64 = base64.b64encode(image_file.read()).decode()  
+    href = f'<a href="data:image/png;base64,{b64}" download={filename}>Download {filename} File</a>'
+    return href
+
+
+c20, c21 = st.columns((2))
+
+with c20:
+    with st.expander("Download Car Delails"):
+        car_image.save('custom_car.png')
+        st.markdown(imagedownload('custom_car.png'), unsafe_allow_html=True) 
+# Last Finishing
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_hello = load_lottieurl("https://lottie.host/64aa95f8-caec-4d90-ad50-2ac0759715ca/VYBvpn5NAI.json")       
+# About us
+c22,c23 = st.columns((2))
+with c22:
+    st.markdown("""
+# :male-student: What We Do
+
+This project analyzes the Indian EV market from 2001-2024, focusing on growth trends, 
+policies, infrastructure, key players, sales data, and consumer preferences. It provides 
+insights into market drivers, challenges, and future prospects, offering a concise view of 
+India's EV evolution.
+
+**Done By**
+\n:one: Souvik Samanta 
+\n:two: Saurabh Subhash Tehare
+\n:three: Arfat Wakeel Khan
+\n:four: Prajwal Nikure
+\n:five: Busetty Vasavi
+\n Thanks :heartpulse:
+
+""")
+    
+with c23:
+    st_lottie(
+    lottie_hello,
+    speed=1,
+    reverse=False,
+    loop=True,
+    quality="low", 
+    height=None,
+    width=None,
+    key=None,
+)
+    
+# End 
 
 
 
