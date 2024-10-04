@@ -9,6 +9,8 @@ import geopandas as gpd
 from PIL import Image
 import base64
 from random import randrange
+# import os
+# current_dir = os.path.dirname(__file__)
 
 # Page configuration
 st.set_page_config(
@@ -40,6 +42,8 @@ df1['Date'] = pd.to_datetime(df1['Date'], format='%m/%d/%y', errors='coerce')
 
 # Setting Page Logo
 st.sidebar.image("CarbonCoders.png")
+# image_path = os.path.join(current_dir, "CarbonCoders.png")
+# st.sidebar.image(image_path)
 #Creating Side Bar
 st.sidebar.header("Choose your filter: ")
 # Create for State
