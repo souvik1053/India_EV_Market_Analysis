@@ -15,7 +15,7 @@ Here are the Python libraries used in the creation of this dashboard app:
 - `geopandas`
 - `Pillow`
 - `matplotlib`
-- 
+   
 ## Data source
 
 The data used in this dashboard is related to the Indian Electric Vehicle (EV) market. The data is sourced from 
@@ -23,6 +23,46 @@ The data used in this dashboard is related to the Indian Electric Vehicle (EV) m
 
 ---
 
-## Reference
+## Flowchart
 
-This dashboard app was built using Streamlit and demonstrates key metrics and trends in the Indian EV market.
+Flowchart for a Typical Data Analysis Project
+
+- Start
+ * Define the Problem/Objective
+   * Clearly state the goal.
+   * Identify key questions.
+ * Data Collection
+   * Identify sources.
+   * Collect raw data.
+ * Data Cleaning
+   * Handle missing data.
+   * Remove duplicates.
+   * Filter outliers.
+   * Standardize formats.
+ * Exploratory Data Analysis (EDA)
+   * Summarize characteristics.
+   * Create visualizations.
+   * Identify trends, patterns, and correlations.
+ * Feature Engineering
+   * Select important variables.
+   * Create new features.
+   * Normalize/standardize data.
+ * Data Modeling
+   * Choose models.
+   * Train models.
+   * Tune hyperparameters.
+ * Model Evaluation
+   * Assess performance using metrics.
+   * Compare models.
+   * Refine if necessary.
+ * Interpretation of Results
+   * Analyze model output.
+   * Draw conclusions.
+   * Relate findings to the problem.
+ * Reporting & Communication
+   * Create reports and visualizations.
+   * Present results to stakeholders.
+ * Deployment (if applicable)
+   * Implement the model into production.
+   * Monitor model performance and maintain it.
+- End
