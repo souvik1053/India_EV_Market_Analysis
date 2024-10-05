@@ -1,5 +1,8 @@
 streamlit
 pandas
 plotly
-altair
 streamlit-lottie
+altair
+geopandas
+Pillow
+matplotlib

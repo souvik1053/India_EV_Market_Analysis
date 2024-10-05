@@ -11,8 +11,8 @@ import base64
 from random import randrange
 # import os
 # current_dir = os.path.dirname(__file__)
-
-# Page configuration
+# """
+# # Page configuration
 st.set_page_config(
     page_title="Indian EV Market",
     page_icon="🚗",
