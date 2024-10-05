@@ -6,3 +6,4 @@ altair
 geopandas
 Pillow
 matplotlib
+streamlit_folium
