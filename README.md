@@ -4,7 +4,7 @@
 
 # Domain: India_EV_Market_Analysis
 
-🚓 #[Open App](https://indianev.streamlit.app/)
+ 🚓[Open App](https://indianev.streamlit.app/)
 
 # our project will look like this : 
 ![image](https://github.com/user-attachments/assets/a06d44b2-c2c8-4b38-af35-596774231141)
