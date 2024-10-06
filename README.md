@@ -17,6 +17,7 @@ https://youtu.be/yxSj6GJ79vU
 
 ## 🖇️ Youtube link: Project QNA Video ✅
 https://youtu.be/sa2ydCknVR8?si=YXEucjOtMKsEiPnA
+
 https://youtu.be/Y48CkFNu4Z4
 
 
