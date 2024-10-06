@@ -9,7 +9,8 @@
 # our project will look like this : 
 ![image](https://github.com/user-attachments/assets/a06d44b2-c2c8-4b38-af35-596774231141)
 
-![image](https://github.com/user-attachments/assets/4bf22a8f-757d-4bd7-b174-429d795c11bf)
+![image](https://github.com/user-attachments/assets/b4c78553-4985-4ba1-8625-0bfe7c903748)
+
 
 
 ## 🖇️ Youtube link: Project Presentation Video 🍁
@@ -27,7 +28,7 @@ https://youtu.be/Y48CkFNu4Z4
 This project analyzes the Indian EV market from 2001-2024, focusing on growth trends, policies, infrastructure, key players, sales data, and consumer preferences. It provides insights into market drivers, challenges, and future prospects, offering a concise view of India's EV evolution.
 Data Source:
 
-♻️Dataset : The data used in this dashboard is related to the Indian Electric Vehicle (EV) market. The data is sourced from 
+♻️Dataset: The data used in this dashboard is related to the Indian Electric Vehicle (EV) market. The data is sourced from 
  [Kaggel](https://www.kaggle.com/datasets/srinrealyf/india-ev-market-data)
 
 
