@@ -21,6 +21,8 @@ https://youtu.be/sa2ydCknVR8?si=YXEucjOtMKsEiPnA
 
 https://youtu.be/Y48CkFNu4Z4
 
+https://youtu.be/60fxBIZ1ueA?si=NiHtkhlR1gWGa0YV
+
 🗝️
 # Key Points:
 🚀 Purpose: Analyze the Electric Vehicle (EV) market in India from 2001 to 2024. Highlight the most significant growth regions, trends, and key drivers to support investment and policy initiatives.
@@ -31,7 +33,7 @@ https://youtu.be/Y48CkFNu4Z4
  Identify trends in EV adoption and compare growth across vehicle categories. Highlight states and regions with the highest EV market penetration. Examine the impact of government policies on market growth.
 
 Data Structure:
-❕ Columns include: State/UT, Year, EV Sales, EV Production, Charging Stations, EV Categories (Two-Wheelers, Cars, Buses, etc.), Government Incentives, and other related metrics.
+❕ Columns include State/UT, Year, EV Sales, EV Production, Charging Stations, EV Categories (Two-Wheelers, Cars, Buses, etc.), Government Incentives, and other related metrics.
 
 🧹Data Cleaning:
 Duplicate removal, handling missing values, renaming columns, and converting data types for consistency.
