@@ -109,8 +109,8 @@ st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
 st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
 
 # Some visualization         
-df['Growth Rate (%)'] = ((df['2024'] - df['2015']) / df['2015']).replace([float('inf'), -float('inf')], 0) * 100
-top_manufacturers_growth = df[['Maker', 'Growth Rate (%)']].sort_values(by='Growth Rate (%)', ascending=False).head(10)          
+df['Growth '] = ((df['2024'] - df['2015']) / df['2015']).replace([float('inf'), -float('inf')], 0) * 100
+top_manufacturers_growth = df[['Maker', 'Growth ']].sort_values(by='Growth ', ascending=False).head(10)          
 category_sales = df.groupby('Cat').sum()[['2015', '2016', '2017', '2018', '2019', '2020', '2021','2022', '2023', '2024']].reset_index()
 category_sales = df.groupby('Cat').sum().loc[:, '2015':'2024']
 category_sales_long = category_sales.reset_index().melt(id_vars='Cat', var_name='Year', value_name='Total Sales')
@@ -119,8 +119,8 @@ cat.columns=['Car Category','Total Sales']
 chart1, chart2 = st.columns((2))
 
 with chart1:
-    st.subheader('Top 10 EV Manufacturers by Growth Rate')
-    fig = px.bar(top_manufacturers_growth, x = 'Growth Rate (%)', y = 'Maker', 
+    st.subheader('Top 10 EV Manufacturers by Growth ')
+    fig = px.bar(top_manufacturers_growth, x = 'Growth ', y = 'Maker', 
                  color_discrete_sequence=['#f4a24b'])
     fig.update_yaxes(autorange='reversed')
     st.plotly_chart(fig,use_container_width=True, height = 200)
@@ -153,7 +153,7 @@ emerging_companies = recent_sales[recent_sales['Total Recent Sales'] > 1000]
 emerging_companies_sorted = emerging_companies[['Maker', 'Total Recent Sales']].sort_values(by='Total Recent Sales', ascending=False).head(10)
 # OLA Sales History
 ola_history=df[df['Maker']=='OLA ELECTRIC TECHNOLOGIES PVT LTD']
-ola_history.drop(columns=['Cat','Growth Rate (%)'],inplace=True)
+ola_history.drop(columns=['Cat','Growth '],inplace=True)
 ola_history_SUM= ola_history.iloc[:, 2:-1].sum()
 minidf_OLA = pd.DataFrame(ola_history_SUM).reset_index()
 minidf_OLA.columns = ['Years', 'Total Sales']
@@ -364,6 +364,8 @@ def main():
 if __name__ == "__main__":
     main()
 
+st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
+st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
 
 # Function to generate car image 
 def create_car_image(body_type, color, wheels, roof):
@@ -448,7 +450,25 @@ with c20:
 
 st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
 st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
+# feedback form 
+st.header(":mailbox: Get In Touch With EV News!")
+contact_form = """
 
+<form action="https://formsubmit.co/sstl16102001@gmail.com" method="POST">
+     <input type="hidden" name="_captcha" value="false">
+     <input type="text" name="name" placeholder="Your name" required>
+     <input type="email" name="email" placeholder="Your email" required>
+     <textarea name="message" placeholder="Your message here"></textarea>
+     <button type="submit">Send</button>
+</form>
+"""
+st.markdown(contact_form, unsafe_allow_html=True)
+
+# Use Local CSS File
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+local_css("C:/Users/STAR/Desktop/India_EV_Market_Analysis/India_EV_Market_Analysis/style.css")
 # About us section
 lottie_hello = load_lottieurl("https://lottie.host/64aa95f8-caec-4d90-ad50-2ac0759715ca/VYBvpn5NAI.json")       
 c22, c23 = st.columns((2))
@@ -483,5 +503,3 @@ with c23:
 # End 
 
 
-
-      
