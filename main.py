@@ -468,7 +468,7 @@ st.markdown(contact_form, unsafe_allow_html=True)
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-local_css("C:/Users/STAR/Desktop/India_EV_Market_Analysis/India_EV_Market_Analysis/style.css")
+local_css("./style.css")
 # About us section
 lottie_hello = load_lottieurl("https://lottie.host/64aa95f8-caec-4d90-ad50-2ac0759715ca/VYBvpn5NAI.json")       
 c22, c23 = st.columns((2))
