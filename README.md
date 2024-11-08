@@ -12,17 +12,6 @@
 ![image](https://github.com/user-attachments/assets/b4c78553-4985-4ba1-8625-0bfe7c903748)
 
 
-
-## 🖇️ Youtube link: Project Presentation Video 🍁
-https://youtu.be/yxSj6GJ79vU
-
-## 🖇️ Youtube link: Project QNA Video ✅
-https://youtu.be/sa2ydCknVR8?si=YXEucjOtMKsEiPnA
-
-https://youtu.be/Y48CkFNu4Z4
-
-https://youtu.be/60fxBIZ1ueA?si=NiHtkhlR1gWGa0YV
-
 🗝️
 # Key Points:
 🚀 Purpose: Analyze the Electric Vehicle (EV) market in India from 2001 to 2024. Highlight the most significant growth regions, trends, and key drivers to support investment and policy initiatives.
