@@ -287,12 +287,6 @@ with cl7:
 # ev_makers
 # Load Data from CSV
 @st.cache_data
-import folium
-from folium.plugins import MarkerCluster
-import pandas as pd
-import streamlit as st
-from streamlit_folium import st_folium
-
 def load_data():
     try:
         data = pd.read_csv('EV_Maker_with_Location.csv')
