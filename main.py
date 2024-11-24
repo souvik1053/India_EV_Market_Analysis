@@ -345,7 +345,7 @@ def main():
     india_map = folium.Map(location=[23.0, 82.0], zoom_start=4, tiles="CartoDB Positron")
 
     # Optional: Add custom boundaries (GeoJSON overlay)
-    geojson_file = 'india_with_disputed_boundaries.geojson'  # Replace with the correct file path
+    geojson_file = 'india_with_disputed_boundaries.geojson.geojson'  # Replace with the correct file path
     try:
         folium.GeoJson(
             geojson_file,
