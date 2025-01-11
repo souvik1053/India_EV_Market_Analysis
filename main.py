@@ -485,7 +485,7 @@ local_css("./style.css")
 lottie_hello = load_lottieurl("https://lottie.host/64aa95f8-caec-4d90-ad50-2ac0759715ca/VYBvpn5NAI.json")       
 c22, c23 = st.columns((2))
 with c22:
-    st.markdown("""# :male-student: What We Do
+    st.markdown("""# :male-student: What I Do
 This project analyzes the Indian EV market from 2001-2024, focusing on growth trends, 
 policies, infrastructure, key players, sales data, and consumer preferences. It provides 
 insights into market drivers, challenges, and future prospects, offering a concise view of 
@@ -493,10 +493,6 @@ India's EV evolution.
 
 **Done By**
 \n:one: Souvik Samanta 
-\n:two: Saurabh Subhash Tehare
-\n:three: Arafat Wakeel Khan
-\n:four: Prajwal Nikure
-\n:five: Busetty Vasavi
 \n Thanks :heartpulse:
 """)
     
