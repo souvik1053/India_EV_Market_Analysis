@@ -451,7 +451,7 @@ with col2:
     # Generate car image based on selected options
     car_image = create_car_image(option_car_body_type, option_car_color, option_wheel_type, option_roof_type)
     st.markdown("<h4 style='text-align: center;'>Best Option for You </h4>", unsafe_allow_html=True)
-    st.image(car_image, use_column_width=True)  # Use the entire column width
+    st.image(car_image, use_container_width=True)  # Use the entire column width
 
 # Download section
 c20, c21 = st.columns((2))
