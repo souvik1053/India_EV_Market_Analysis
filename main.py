@@ -377,8 +377,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
-st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
+#st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
+#st.markdown("<br>", unsafe_allow_html=True)  # Adds a line break
 
 # Function to generate car image 
 def create_car_image(body_type, color, wheels, roof):
